@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HackU研究室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h2>La Board   <small>HackU研究室</small></h2>
+        <br>
+
+        <!-- table -->
+        <table class="table table-striped table-bordered">
+        	<thead><tr><th><center>名前</center></th><th><center>状態</center></th></tr></thead>
+            <tbody>
+        	<tr><td>大澤　克志</td><td><center><div id="t_Ohzawa"></div></center></td></tr>
+        	<tr><td>児玉　千紗</td><td><center><div id="t_Kodama"></div></center></td></tr>
+        	<tr><td>樋口　峻市</td><td><center><div id="t_Higuchi"></div></center></td></tr>
+            </tbody>
+        </table>
+        <br>
+
+        <!-- Button modal -->
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">入退室管理</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">入退室管理</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <center>
+                            <!-- セレクトボックス -->
+                            <label>名前</label>
+                            <select class="form-control" id="selectName">
+                                <option value="Ohzawa">大澤　克志</option>
+                                <option value="Kodama">児玉　千紗</option>
+                                <option value="Higuchi">樋口　峻市</option>
+                            </select>
+                            <!-- パスワード入力エリア -->
+                            <div class="form-group"><label>パスワード</label><input type="password" class="form-control" id="pw" placeholder="Password"></div>
+                            <!-- ボタン -->
+                            <button type="button" class="btn btn-primary" onClick="stateUpdate('入室');">入室</button>
+                            <button type="button" class="btn btn-primary" onClick="stateUpdate('退室');">退室</button>
+                        </center>
+                    </div>
+
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+	
+	<!-- FireBase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script src="js/LaBoard.js"></script>
+
+</body>
